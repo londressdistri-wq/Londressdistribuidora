@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Lock, User, ArrowRight, AlertCircle } from 'lucide-react';
 
@@ -123,12 +124,12 @@ export default function AdminLoginPage() {
 
           {/* Footer note */}
           <div className="pt-2 border-t border-slate-900 text-center">
-            <a
+            <Link
               href="/"
               className="text-xs text-slate-500 hover:text-slate-300 transition-colors font-medium"
             >
               ← Volver a la web pública
-            </a>
+            </Link>
           </div>
         </div>
       </div>

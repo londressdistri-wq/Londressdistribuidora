@@ -17,10 +17,6 @@ export function Header() {
   const { totalItems, setIsDrawerOpen } = useQuote();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  if (pathname?.startsWith('/studio') || pathname?.startsWith('/admin')) {
-    return null;
-  }
-
   const [cleanNumber, setCleanNumber] = useState('5492216733172');
 
   React.useEffect(() => {
@@ -34,6 +30,10 @@ export function Header() {
       }
     } catch {}
   }, []);
+
+  if (pathname?.startsWith('/studio') || pathname?.startsWith('/admin')) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all">
