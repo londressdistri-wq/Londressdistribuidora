@@ -1,7 +1,10 @@
 import { cookies } from 'next/headers';
 
-export const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'distribuidoralondres';
-export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'londres1234';
+const envUser = process.env.ADMIN_USERNAME;
+const envPass = process.env.ADMIN_PASSWORD;
+
+export const ADMIN_USERNAME = (envUser && envUser !== 'distribuidoralondres') ? envUser : 'Chumbitaa2026';
+export const ADMIN_PASSWORD = (envPass && envPass !== 'londres1234') ? envPass : 'Londress1234_';
 export const AUTH_COOKIE_NAME = 'londres_admin_session';
 export const AUTH_TOKEN_VALUE = 'londres_auth_token_active_session';
 
