@@ -27,6 +27,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://londressdistribuidora.com.ar'),
   title: 'Distribuidora Londress | Máquinas e Insumos de Peluquería y Barbería',
   description:
     'Venta y distribución de máquinas de corte, trimmers, shavers, tijeras profesionales y cosmética capilar. Atención directa a salones, barberías y profesionales.',
@@ -41,6 +42,26 @@ export const metadata: Metadata = {
     'polvo decolorante',
     'cosmetica capilar profesional',
   ],
+  alternates: {
+    canonical: 'https://londressdistribuidora.com.ar',
+  },
+  openGraph: {
+    title: 'Distribuidora Londress | Máquinas e Insumos de Peluquería y Barbería',
+    description:
+      'Venta y distribución de máquinas de corte, trimmers, shavers, tijeras profesionales y cosmética capilar. Atención directa a salones, barberías y profesionales.',
+    url: 'https://londressdistribuidora.com.ar',
+    siteName: 'Distribuidora Londress',
+    images: [
+      {
+        url: '/images/logo.jpg',
+        width: 800,
+        height: 800,
+        alt: 'Distribuidora Londress',
+      },
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico?v=20261001', sizes: 'any' },
@@ -86,10 +107,11 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'WholesaleStore',
               name: 'Distribuidora Londress',
+              url: 'https://londressdistribuidora.com.ar',
               description: 'Venta y distribución de máquinas e insumos de peluquería, barbería y equipamiento profesional',
               telephone: '+54 9 221 673-3172',
               email: 'Londressdistri@gmail.com',
-              image: '/images/logo.jpg',
+              image: 'https://londressdistribuidora.com.ar/images/logo.jpg',
               priceRange: '$$',
               address: {
                 '@type': 'PostalAddress',
