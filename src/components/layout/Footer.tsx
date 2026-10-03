@@ -11,6 +11,25 @@ import {
 } from 'lucide-react';
 import categoriesData from '@/data/categories.json';
 
+function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
 export function Footer() {
   const pathname = usePathname();
   const [categories, setCategories] = React.useState(categoriesData);
@@ -71,6 +90,17 @@ export function Footer() {
             <p className="text-xs text-slate-500 max-w-sm leading-relaxed font-normal">
               Venta y provisión de máquinas de corte, trimmers, tijeras profesionales y cosmética capilar. Atención directa a salones y barberías.
             </p>
+            <div className="pt-1">
+              <a
+                href="https://www.instagram.com/londressdistribuidora/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-pink-300 hover:bg-pink-50/50 text-slate-700 hover:text-pink-600 text-xs font-semibold transition-all group"
+              >
+                <InstagramIcon className="w-4 h-4 text-pink-600 group-hover:scale-110 transition-transform" />
+                <span>@londressdistribuidora</span>
+              </a>
+            </div>
           </div>
 
           {/* Categories */}
@@ -143,6 +173,17 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
                 <span>{contactSchedule}</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <InstagramIcon className="w-3.5 h-3.5 text-pink-600 shrink-0" />
+                <a
+                  href="https://www.instagram.com/londressdistribuidora/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-pink-600 transition-colors"
+                >
+                  Instagram Oficial
+                </a>
               </li>
             </ul>
           </div>
