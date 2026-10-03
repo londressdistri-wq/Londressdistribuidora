@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { QuoteProvider } from '@/context/QuoteContext';
@@ -121,6 +120,24 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* Google Analytics GA4 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-9V3ZXX7VNG"
+        />
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-9V3ZXX7VNG', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </head>
       <body
         className="min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-slate-900 selection:text-white overflow-x-hidden"
@@ -134,33 +151,6 @@ export default function RootLayout({
           <QuoteDrawer />
           <FloatingWhatsAppButton />
         </QuoteProvider>
-
-        {(() => {
-          const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-9V3ZXX7VNG';
-          if (!gaId) return null;
-          return (
-            <>
-              <Script
-                strategy="afterInteractive"
-                src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              />
-              <Script
-                id="google-analytics"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${gaId}', {
-                      page_path: window.location.pathname,
-                    });
-                  `,
-                }}
-              />
-            </>
-          );
-        })()}
       </body>
     </html>
   );
