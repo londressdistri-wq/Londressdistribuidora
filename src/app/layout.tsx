@@ -7,6 +7,8 @@ import { TopAnnouncementBar } from '@/components/layout/TopAnnouncementBar';
 import { Footer } from '@/components/layout/Footer';
 import { QuoteDrawer } from '@/components/quote/QuoteDrawer';
 import { FloatingWhatsAppButton } from '@/components/common/FloatingWhatsAppButton';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -151,6 +153,8 @@ export default function RootLayout({
           <QuoteDrawer />
           <FloatingWhatsAppButton />
         </QuoteProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
