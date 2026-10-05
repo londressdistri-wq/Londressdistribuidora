@@ -65,15 +65,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico?v=20261001', sizes: 'any' },
-      { url: '/favicon-32x32.png?v=20261001', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png?v=20261001', sizes: '16x16', type: 'image/png' },
-      { url: '/icon.png?v=20261001', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/icon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/icon.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-icon.png?v=20261001', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico?v=20261001',
+    shortcut: '/favicon.ico',
   },
   other: {
     'color-scheme': 'light only',
@@ -95,12 +96,12 @@ export default function RootLayout({
       <head>
         <meta name="color-scheme" content="light only" />
         <meta name="darkreader-lock" content="true" />
-        <link rel="icon" href="/favicon.ico?v=20261001" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20261001" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20261001" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/icon.png?v=20261001" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png?v=20261001" />
-        <link rel="shortcut icon" href="/favicon.ico?v=20261001" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/icon-48x48.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
